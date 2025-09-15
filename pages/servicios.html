@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio | img </title>
+    <title>Servicios | img </title>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>   <!--CODIGO DE LA WEB fontawesome-->
+     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,29 +18,57 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <header class="servicios-header">
-        <div class="header-contenedor-superior">
-        <img class="logotipo" src="../imagenes/logoImg.jpg" alt="Logo del local">
-
-        <nav>
-            <ul class="ul-navbar">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="./nosotros.html">Nosotros</a></li>
-                <li><a href="./servicios.html">Servicios</a></li>
-                <li><a href="./preguntas.html">Preguntas</a></li>
-                <li><a href="./contacto.html">Contacto</a></li>
+<header class="index-header">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 position-fixed top-0 w-100">
+        <div class="container-fluid">
+          <img
+            class="logotipo"
+            src="../imagenes/logoImg.png"
+            alt="Logo del local"
+          />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="../index.html">Inicio</a>
+             </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./nosotros.html">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./preguntas.html">Preguntas</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contacto.html">Contactos</a>
+              </li>
             </ul>
-           </nav>
-           </div>
+          </div>
+        </div>
+      </nav>
 
-           <section class="header-contenedor-inferior">
-           <h1 class="texto-negro index-h1 centrar-texto color-fondo"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis aperiam esse id sint? Hic, dolorum.</h1>
-           <p class="texto-negro centrar-texto">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis reiciendis saepe omnis minima vel accusantium quas harum?
-           </p>
-           
-           </section>
+      <section
+        class="header-contenedor-inferior d-flex flex-column justify-content-center align-items-center h-100"
+      >
+        <h1 class="texto-negro index-h1 centrar-texto">Lorem ipsum dolor sit amet.</h1>
+        <p class="texto-negro centrar-texto">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, quae.
+        </p>
+      </section>
     </header>
+    
     <main>
         <h2 class="centrar-texto">Nuestros Servicios</h2>
         
@@ -84,25 +119,31 @@
         
         <input type="email" placeholder="Ingresa tu correo">
     </section>
-        <footer>
-        <p class="centrar-texto footer-parrafo">
-            Todos los derechos reservados
-        </p>
-        <div class="footer-contenedor-flex">
-       <a 
-       href="https://www.instagram.com/imgindumentaria/" target="_blank" rel="noopener">
-        <img class="logotipo-footer" src="../imagenes/logoInstagram.png" alt="logo de instagram">
+       <footer>
+      <p class="centrar-texto footer-parrafo">Todos los derechos reservados</p>
+      <div class="icono-footer">
+        <a
+          href="https://www.instagram.com/imgindumentaria/"
+          target="_blank"
+          rel="noopener">
+        <i class="fab fa-instagram"></i> 
         </a>
-        
 
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener"> 
-        <img class="logotipo-footer" src="../imagenes/logoFacebook.png" alt="logo de facebook">
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener">
+          <i class="fab fa-facebook"></i>
         </a>
- 
+
         <a href="https://web.whatsapp.com/" target="_blank" rel="noopener">
-        <img class="logotipo-footer" src="../imagenes/logoWhatsapp.png" alt="logo de whatsapp">
+        <i class="fab fa-whatsapp"></i                                     
+         ></a>
+
         </a>
-        </div>
-    </footer> 
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
 </body>
 </html>

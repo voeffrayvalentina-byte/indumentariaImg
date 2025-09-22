@@ -69,12 +69,12 @@
       <section
         class="header-contenedor-inferior d-flex flex-column justify-content-center align-items-center h-100"
       >
-        <h1 class="texto-negro index-h1 centrar-texto">3 CUOTAS SIN INTERES</h1>
-        <p class="texto-negro centrar-texto">
+        <h1 class="text-black index-h1 text-center">3 CUOTAS SIN INTERES</h1>
+        <p class="text-black text-center">
           Aprovecha con tu tarjeta de credito 3 cuotas sin intereses o 20% de
           descuento en EFECTIVO.
         </p>
-        <div class="header-contenedor-inferior-botones">
+        <div class="d-flex flex-column gap-1">
           <button>NEW COLECCION</button>
           <button>SALE</button>
         </div>
@@ -82,167 +82,102 @@
     </header>
 
     <main>
-      <h2 class="centrar-texto algoritmo-titulo">
+      <h2 class="text-center fs-2 p-1">
         PRENDAS SELECCIONADAS EN SALE
       </h2>
 
-      <div class="algoritmos-contenedor-flex">
-        <section class="card-algoritmos">
-          <h3 class="centrar-texto card-algoritmos-titulo">
+      <div class="d-flex justify-content-center gap-3 flex-wrap p-1 ">
+        <section class="card-algoritmos rounded-5 d-flex flex-column justify-content-center">
+          <h3 class="text-center fs-4">
             Sweaters valentina
           </h3>
-          <p class="centrar-texto">
-            Todos cuentan con una excelente confeccion y calidad de lana, los
-            talles son unicos pero van variando dependiendo de el calce
-            preferido.
+          <p class="text-center">
+            Descubrí el sweater que combina elegancia y confort. Suave, versátil y con el diseño que amás, ahora a mitad de precio. 
           </p>
-          <p class="car-algoritmos-precio centrar-texto">
+          <p class="car-algoritmos-precio text-center">
             <span>100 USD</span> 50USD
           </p>
           <button>Comprar</button>
         </section>
 
-        <section class="card-algoritmos">
-          <h3 class="centrar-texto card-algoritmos-titulo">Jeans Isostasia</h3>
-          <p class="centrar-texto">
-            Trabajamos con talles reales del 36 al 46, con calidad y tinte
-            destacado.
+        <section class="card-algoritmos rounded-5 d-flex flex-column justify-content-center">
+          <h3 class="text-center fs-4">Jeans Isostasia</h3>
+          <p class="text-center">
+            Jeans Isostasia: el clásico que nunca falla. Corte perfecto, cómodos y con estilo atemporal. Desde el talle 34 al 44.
           </p>
-          <p class="car-algoritmos-precio centrar-texto">
+          <p class="car-algoritmos-precio text-center">
             <span>180 USD</span> 100USD
           </p>
           <button>Comprar</button>
         </section>
 
-        <section class="card-algoritmos">
-          <h3 class="centrar-texto card-algoritmos-titulo">Camisas Seansone</h3>
-          <p class="centrar-texto">
-            Camisas 100% de algodon y siempre en tonalidades beige
+        <section class="card-algoritmos rounded-5 d-flex flex-column justify-content-center">
+          <h3 class="text-center fs-4">Camisas Seansone</h3>
+          <p class="text-center">
+            Elegancia y comodidad para todos los talles: camisas Season pensadas para resaltar tu estilo con libertad y confianza, 100% algodon.
           </p>
-          <p class="car-algoritmos-precio centrar-texto">
+          <p class="car-algoritmos-precio text-center">
             <span>150USD</span> 100USD
           </p>
           <button>Comprar</button>
         </section>
       </div>
     </main>
-
-    <section class="seccion-rentabilidad">
-      <h3 class="centrar-texto seccion-rentabilidad-titulo">COLECCION PV25</h3>
-
-      <div class="seccion-rentabilidad-flex">
-        <section class="seccion-rentabilidad-card">
-          <img
-            class="imagen-bluza"
-            src="./imagenes/bluzaCropped.png"
-            alt="imagen bluza crooped"
-          />
-          <h4>Bluza Popover lino</h4>
-          <p>
-            A la vez informal y lujoso, este top relajado de lino esta hecho de
-            un hermoso lino transpirable, apreciado por su capacidad para
-            fresco. Corte experto para un ajuste holgado.
-          </p>
-        </section>
-
-
-          <img
-            class="imagen-bluza"
-            src="./imagenes/bluzaPopover.png"
-            alt="imagen bluza Popover"
-          />
-          <h4>Bluza Cropped Italian</h4>
-          <p>
-            Creada para lucir un ajuste relajado, combianada con su composicion
-            100% de algodon Reganagri.
-          </p>
-        </section>
+   
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="section-title fs-1 w-100 bg-black text-white">Nueva Coleccion</h2>
+        <div class="underline mx-auto"></div>
       </div>
-    </section>
 
-    <section class="clientes-contenedor">
-      <h2 class="centrar-texto algoritmo-titulo">
-        Lo que dicen nuestros clientes
-      </h2>
-
-      <div class="clientes-contenedor-flex">
-        <section class="clientes-card">
-          <div class="cliente-card-flex">
-            <img
-              class="usuario-logo"
-              src="./imagenes/fotoDeClienta.png"
-              alt="foto clienta"
-            />
-            <section>
-              <h3>Julieta Mansilla</h3>
-              <h4>Prof de ingles</h4>
-            </section>
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <div class="card border-0 text-center">
+            <img src="./imagenes/bluzaPopover.webp" class="card-img-top" alt="bluza lino">
+            <div class="card-body py-2">
+              <p class="mb-1 fs-4 text-muted">Bluza Popover</p>
+              <p class="mb-0 price text-dark fw-bold text-sombra">120USD</p>
+            </div>
           </div>
-          <p>
-            Cada vez que paso por esta tienda encuentro algo que me encanta 😍. La ropa es de excelente calidad y siempre me atienden con una sonrisa. ¡Se nota la dedicación en cada detalle!
-          </p>
-        </section>
+        </div>
 
-        <section class="clientes-card">
-          <div class="cliente-card-flex">
-            <img
-              class="usuario-logo"
-              src="./imagenes/fotoDeClienta1.png"
-              alt="foto clienta"
-            />
-            <section>
-              <h3>Martina Quiroga</h3>
-              <h4>Abogada</h4>
-            </section>
+        <div class="col-6 col-md-3">
+          <div class="card border-0 text-center">
+            <img src="./imagenes/bluzaCropped.webp" class="card-img-top" alt="bluza lino">
+            <div class="card-body py-2">
+              <p class="mb-1 fs-4 text-muted">Bluza Cropped</p>
+              <p class="mb-0 price text-dark fw-bold">130USD</p>
+            </div>
           </div>
-          <p>
-            Me sorprendieron los precios, son súper accesibles y la ropa tiene un estilo moderno pero elegante ✨. Además, me asesoraron re bien para armar mis looks. ¡Volvería mil veces!
-          </p>
-        </section>
+        </div>
 
-        <section class="clientes-card">
-          <div class="cliente-card-flex">
-            <img
-              class="usuario-logo"
-              src="./imagenes/fotoDeClienta2.png"
-              alt="foto clienta"
-            />
-            <section>
-              <h3>Camila Ferreyra</h3>
-              <h4>Bioquimica</h4>
-            </section>
+        <div class="col-6 col-md-3">
+          <div class="card border-0 text-center">
+            <img src="./imagenes/camisaLaver.avif" class="card-img-top" alt="camisa lino">
+            <div class="card-body py-2">
+              <p class="mb-1 fs-4 text-muted">Camisa Laver</p>
+              <p class="mb-0 price text-dark fw-bold">120USD</p>
+            </div>
           </div>
-          <p>
-            La atención es increíble, sentís que te miman desde que entrás 💕. La tienda es mi lugar favorito para renovar el placard, siempre encuentro algo único y de buen gusto.
-          </p>
-        </section>
-      </div>
-    </section>
+        </div>
 
-    <section class="empresas-container">
-      <h4 class="centrar-texto empresas-titulo">MEDIOS DE ENVIO</h4>
-
-      <div>
-        <p class="centrar-texto">solo se realizan con estas dos empresas</p>
-        <div class="empresas-img">
-          <img
-            class="empresasLogo"
-            src="./imagenes/logoAndreani.png"
-            alt="Andreani Logo"
-          />
-
-          <img
-            class="empresasLogo"
-            src="./imagenes/logoCorreo.png"
-            alt="CorreoArgentino Logo"
-          />
+        <div class="col-6 col-md-3">
+          <div class="card border-0 text-center">
+            <img src="./imagenes/popolinZip.avif" class="card-img-top" alt="bluza">
+            <div class="card-body py-2">
+              <p class="mb-1 fs-4 text-muted">Popolin Zip</p>
+              <p class="mb-0 price text-dark fw-bold">150USD</p>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <footer>
-      <p class="centrar-texto footer-parrafo">Todos los derechos reservados</p>
-      <div class="icono-footer">
+      <p class="text-center fs-5">Todos los derechos reservados</p>
+      <div class="icono-footer d-flex justify-content-center">
         <a
           href="https://www.instagram.com/imgindumentaria/"
           target="_blank"

@@ -5,6 +5,9 @@
 ul {
   list-style-type: none;
 }
+.tamaño-text-h1 {
+  font-size: 6rem;
+}
 
 /* Header */
 .index-header,
@@ -12,7 +15,7 @@ ul {
   background-image: url(../imagenes/fondoInicio.png);
   background-size: cover;
   background-repeat: no-repeat;
-  height: 95vh;
+  height: 100vh;
   position: relative;
 }
 .nosotros-header {
@@ -30,14 +33,6 @@ ul {
   position: relative;
 }
 
-/* Estilos pag preguntas */
-.servicios-header {
-  background-image: url(../imagenes/fondoServicioss.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 95vh;
-  position: relative;
-}
 .section img {
   width: 60%;
   border-radius: 12px;
@@ -76,14 +71,7 @@ ul {
   font-weight: 600;
   text-shadow: 1px 2px 4px #191818;
 }
-.header-contenedor-inferior-botones {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-.servicios-header-contenedor-inferior {
-  padding: 0 3rem;
-}
+
 /*rentabilidad*/
 .seccion-rentabilidad {
   background-color: rgb(248, 246, 246);
@@ -112,6 +100,92 @@ ul {
   gap: 2rem;
   height: 35rem;
 }
+
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+}
+
+.servicios-header,
+.servicios-header .navbar {
+  background-color: #f8f9fa;
+  width: 100%;
+  margin: 0 !important;
+}
+
+.servicios-header .container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+main {
+  margin-top: 40px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  margin: 20px;
+  color: #333;
+}
+.form-container {
+  max-width: 600px;
+  margin: auto;
+}
+h1 {
+  text-align: left;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+}
+label {
+  display: inline-block;
+  width: 100px;
+  font-size: 16px;
+  color: #555;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+  flex: 1;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+textarea {
+  resize: vertical;
+  height: 100px;
+}
+.submit-btn {
+  background-color: #eee;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #555;
+  width: 100%;
+}
+.submit-btn:hover {
+  background-color: #ddd;
+}
+
 /* Main */
 main {
   padding: 1rem;
@@ -126,10 +200,6 @@ main {
   border: 1px solid #0000001f;
   height: 20rem;
   border-radius: 0.5rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 .card-algoritmos-titulo {
   font-size: 1, 5rem;
@@ -320,9 +390,34 @@ footer {
   flex-direction: column;
   justify-content: center;
 }
+/* footer contacto */
+/* Discreto como pediste */
 .icono-footer {
-  font-size: 50px;
+  font-size: 15px;
+  line-height: 1;
 }
+
+/* Alto mínimo similar al de tu captura */
+.footer {
+  min-height: 228px;
+}
+
+.footer .footer-icons {
+  position: absolute;
+  left: 0;
+  top: 2.9rem;
+  padding-left: 0.75rem;
+}
+
+.footer .footer-content {
+  padding-left: 90px;
+}
+
+.footer .icono-footer:hover {
+  opacity: 0.8;
+  text-decoration: none;
+}
+
 .icono-footer i {
   color: rgba(155, 123, 123, 0.831);
   object-fit: cover;

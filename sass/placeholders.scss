@@ -1,0 +1,6 @@
+@import "variables";
+@import "mixins";
+
+%shadowed { box-shadow: $shadow; }
+%card     { @include card(); }
+%btn      { @include btn(); }

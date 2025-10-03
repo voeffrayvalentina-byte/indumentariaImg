@@ -1,0 +1,45 @@
+// Tipografía unificada
+$font-main: "Poppins", sans-serif;
+
+// Colores base
+$brand: rgba(155, 123, 123, 0.831); // tal cual
+$brand-ink: #191818;
+$text: #333;
+$text-muted: #555;
+$white: #fff;
+$black: #000;
+
+// Fondos
+$bg-page: #fff;
+$bg-light: #f8f9fa;
+$bg-soft: rgb(220, 218, 218);
+$bg-soft-2: rgb(214, 204, 194);
+$bg-soft-3: rgba(158, 150, 150, 0.458);
+$bg-soft-4: rgba(216, 201, 201, 0.796);
+$bg-beige: rgba(245, 245, 220, 0.942);
+
+// Bordes y sombras
+$radius: 0.5rem;
+$shadow: 0 0 8px 0 #0000008a;
+
+// Espaciados
+$space-1: 0.5rem;
+$space-2: 1rem;
+$space-3: 2rem;
+
+// Breakpoint
+$bp-md: 900px;
+
+// Z-index
+$z-fixed: 1000;
+
+// Utilidades de tamaños (para generar .u-*)
+$font-sizes: (
+  "h1-xxl": 6rem,
+  "h1-xl": 3rem,
+  "h1-lg": 2.25rem,
+  "h2": 1.75rem,
+  "h3": 1.5rem,
+  "base": 1rem,
+  "sm": 0.875rem
+);

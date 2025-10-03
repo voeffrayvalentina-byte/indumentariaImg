@@ -1,0 +1,50 @@
+@import "variables";
+
+@mixin flex-center($dir: row, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+@mixin btn($bg: $brand, $color: $white) {
+  background-color: $bg;
+  color: $color;
+  border: none;
+  border-radius: $radius;
+  padding: $space-1 $space-2;
+  font-weight: 600;
+  text-shadow: 1px 2px 4px $brand-ink;
+  cursor: pointer;
+
+  &:hover { filter: brightness(0.95); }
+}
+
+@mixin card($bg: $white, $p-y: $space-2, $p-x: $space-2) {
+  background-color: $bg;
+  border: 1px solid #0000001f;
+  border-radius: $radius;
+  padding: $p-y $p-x;
+}
+
+// Fondo cover con altura fluida
+// $min: rem mínimos, $pref: viewport preferido, $max: rem máximos
+@mixin bg-cover($img, $min: 28rem, $pref: 90vh, $max: 100vh) {
+  background-image: url(#{$img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: clamp($min, $pref, $max);
+  position: relative;
+}
+
+// Full-bleed
+@mixin full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+}
+
+// Up / Down breakpoints
+@mixin respond-md { @media (min-width: $bp-md) { @content; } }
+@mixin respond-down-md { @media (max-width: ($bp-md - 1)) { @content; } }

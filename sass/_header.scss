@@ -1,0 +1,48 @@
+@import "variables";
+@import "mixins";
+
+/* Headers con min-height fluido */
+.index-header, .preguntas-header { @include bg-cover("../imagenes/fondoInicio.png", 28rem, 95vh, 100vh); }
+.nosotros-header                 { @include bg-cover("../imagenes/fondoNosotros.png", 24rem, 85vh, 95vh); }
+.contacto-header                 { @include bg-cover("../imagenes/fondoContacto.png", 24rem, 85vh, 95vh); }
+
+.header-contenedor-superior, .preguntas-contenedor-superior {
+  background-color: rgba(255, 255, 255, 0.938);
+  @include flex-center(row, 0);
+  justify-content: space-between;
+  padding: $space-1;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: $z-fixed;
+}
+
+.logotipo { width: 6.5rem; }
+
+.index-h1 {
+  font-size: 1.5rem; // corregido (antes 1, 5rem)
+  text-transform: capitalize;
+}
+
+.header-contenedor-inferior {
+  width: 60%;
+  margin: 0 auto;
+
+  button {
+    @include btn($brand, lch(100% 0.01 296.81)); // mantiene text-shadow
+  }
+}
+
+.servicios-header, .servicios-header .navbar {
+  background-color: $bg-light;
+  width: 100%;
+  margin: 0 !important;
+}
+
+.servicios-header .container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Header fijo -> margen al main */
+main { margin-top: 40px; }

@@ -1,0 +1,29 @@
+@import "variables";
+
+* { font-family: $font-main; }
+html, body { margin: 0 !important; padding: 0 !important; }
+
+body {
+  background-color: $bg-page;
+  margin: 20px;
+  color: $text;
+}
+
+ul { list-style: none; padding-left: 0; }
+h1 { text-align: left; }
+
+.section img {
+  width: 60%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+@media (max-width: ($bp-md - 1)) {
+  .section img { width: 100%; } // móvil: ancho completo
+}
+
+/* Utilidad original conservada */
+.tamaño-text-h1 { font-size: 6rem; }
+
+/* Main padding general */
+main { padding: $space-2; }

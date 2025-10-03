@@ -1,0 +1,23 @@
+@import "variables";
+
+.form-consulta {
+  background-color: rgb(236, 232, 228);
+  padding: $space-2;
+
+  div {
+    display: flex; flex-direction: column; margin: 0.5rem 0;
+    input { padding: $space-1; }
+  }
+}
+
+.consulta-container { padding: $space-2; }
+
+.mail-contacto-container {
+  background-image: url(../imagenes/fondoMail.jpg);
+  min-height: clamp(8rem, 10rem, 10rem);
+  background-size: cover;
+
+  h4 { font-size: 1.2rem; padding-top: $space-1; }
+  input { width: 70%; border: none; }
+}
+

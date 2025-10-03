@@ -1,0 +1,25 @@
+@import "variables";
+
+footer {
+  background-color: $bg-soft;
+  min-height: clamp(8rem, 10rem, 12rem);
+  display: flex; flex-direction: column; justify-content: center;
+}
+
+/* Discreto */
+.icono-footer {
+  font-size: 15px; line-height: 1;
+  i { color: $brand; object-fit: cover; }
+}
+
+/* Contenedor grande del footer (antes 228px fijos) */
+.footer {
+  min-height: clamp(12rem, 15vw, 14.25rem); // 14.25rem ≈ 228px
+  .footer-icons { position: absolute; left: 0; top: 2.9rem; padding-left: 0.75rem; }
+  .footer-content { padding-left: 90px; }
+  .icono-footer:hover { opacity: .8; text-decoration: none; }
+}
+
+.footer-contenedor-flex {
+  display: flex; justify-content: center; color: $brand;
+}

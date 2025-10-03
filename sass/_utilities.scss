@@ -1,0 +1,10 @@
+@import "variables";
+@import "mixins";
+
+/* Genera .u-* desde el map $font-sizes */
+@each $name, $size in $font-sizes {
+  .u-#{$name} { font-size: $size; }
+}
+
+/* Full-bleed utilitario */
+.full-bleed { @include full-bleed; }

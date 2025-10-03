@@ -1,0 +1,28 @@
+@import "variables";
+@import "mixins";
+
+.seccion-rentabilidad {
+  background-color: rgb(248, 246, 246);
+  min-height: clamp(48rem, 70rem, 81rem);
+
+  &-titulo {
+    padding: $space-3;
+    background-color: $bg-beige;
+  }
+
+  &-card {
+    @include card($white, $space-2, $space-2);
+    max-width: 90%;
+    min-height: clamp(24rem, 32rem, 37rem);
+
+    h4 { font-size: 1.2rem; margin-bottom: 0; }
+  }
+
+  &-flex {
+    @include flex-center(column, 2rem);
+  }
+}
+
+@include respond-md {
+  .seccion-rentabilidad-flex { flex-direction: row; justify-content: center; }
+}

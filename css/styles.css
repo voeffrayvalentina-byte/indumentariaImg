@@ -1,36 +1,51 @@
-/* Estilos Generales */
+@charset "UTF-8";
+.contenedor-preguntas-grid section {
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5411764706);
+}
+
+.servicios-contenedor, .card-algoritmos {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1215686275);
+  border-radius: 0.5rem;
+  padding: 1rem 1rem;
+}
+
+form .submit-btn {
+  background-color: rgba(155, 123, 123, 0.831);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-shadow: 1px 2px 4px #191818;
+  cursor: pointer;
+}
+form .submit-btn:hover {
+  filter: brightness(0.95);
+}
+
 * {
   font-family: "Poppins", sans-serif;
 }
-ul {
-  list-style-type: none;
-}
-.tamaño-text-h1 {
-  font-size: 6rem;
+
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
-/* Header */
-.index-header,
-.preguntas-header {
-  background-image: url(../imagenes/fondoInicio.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-  position: relative;
+body {
+  background-color: #fff;
+  margin: 20px;
+  color: #333;
 }
-.nosotros-header {
-  background-image: url(../imagenes/fondoNosotros.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 95vh;
-  position: relative;
+
+ul {
+  list-style: none;
+  padding-left: 0;
 }
-.contacto-header {
-  background-image: url(../imagenes/fondoContacto.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 95vh;
-  position: relative;
+
+h1 {
+  text-align: left;
 }
 
 .section img {
@@ -39,82 +54,86 @@ ul {
   object-fit: cover;
 }
 
-.header-contenedor-superior .preguntas-contenedor-superior {
-  background-color: rgba(255, 255, 255, 0.938);
+@media (max-width: 899px) {
+  .section img {
+    width: 100%;
+  }
+}
+.tamaño-text-h1 {
+  font-size: 6rem;
+}
 
+main {
+  padding: 1rem;
+}
+
+.index-header, .preguntas-header {
+  background-image: url(../imagenes/fondoInicio.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: clamp(28rem, 95vh, 100vh);
+  position: relative;
+}
+
+.nosotros-header {
+  background-image: url(../imagenes/fondoNosotros.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: clamp(24rem, 85vh, 95vh);
+  position: relative;
+}
+
+.contacto-header {
+  background-image: url(../imagenes/fondoContacto.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: clamp(24rem, 85vh, 95vh);
+  position: relative;
+}
+
+.header-contenedor-superior, .preguntas-contenedor-superior {
+  background-color: rgba(255, 255, 255, 0.938);
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
+  gap: 0;
   justify-content: space-between;
   padding: 0.5rem;
   width: 100%;
-
   position: fixed;
   top: 0;
+  z-index: 1000;
 }
+
 .logotipo {
   width: 6.5rem;
 }
+
 .index-h1 {
-  font-size: 1, 5rem;
+  font-size: 1.5rem;
   text-transform: capitalize;
 }
+
 .header-contenedor-inferior {
   width: 60%;
   margin: 0 auto;
 }
 .header-contenedor-inferior button {
   background-color: rgba(155, 123, 123, 0.831);
-  padding: 0.5rem 1rem;
+  color: lch(100% 0.01 296.81deg);
   border: none;
   border-radius: 0.5rem;
-  color: lch(100% 0.01 296.81);
+  padding: 0.5rem 1rem;
   font-weight: 600;
   text-shadow: 1px 2px 4px #191818;
+  cursor: pointer;
+}
+.header-contenedor-inferior button:hover {
+  filter: brightness(0.95);
 }
 
-/*rentabilidad*/
-.seccion-rentabilidad {
-  background-color: rgb(248, 246, 246);
-  height: 81rem;
-}
-.seccion-rentabilidad-titulo {
-  padding: 2rem;
-  background-color: rgba(245, 245, 220, 0.942);
-}
-.seccion-rentabilidad-card {
-  background-color: rgb(255, 255, 255);
-  max-width: 90%;
-  height: 37rem;
-  padding: 1rem 2rem;
-  border-radius: 0.5rem;
-}
-.seccion-rentabilidad-card h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0;
-}
-.seccion-rentabilidad-flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 2rem;
-  height: 35rem;
-}
-
-html,
-body {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.full-bleed {
-  width: 100vw;
-  margin-left: calc(50% - 50vw) !important;
-  margin-right: calc(50% - 50vw) !important;
-}
-
-.servicios-header,
-.servicios-header .navbar {
+.servicios-header, .servicios-header .navbar {
   background-color: #f8f9fa;
   width: 100%;
   margin: 0 !important;
@@ -125,41 +144,66 @@ body {
   padding-right: 0 !important;
 }
 
+/* Header fijo -> espacio al main */
 main {
   margin-top: 40px;
 }
 
-body {
-  font-family: Arial, sans-serif;
+.seccion-rentabilidad {
+  background-color: rgb(248, 246, 246);
+  min-height: 70rem;
+}
+.seccion-rentabilidad-titulo {
+  padding: 2rem;
+  background-color: rgba(245, 245, 220, 0.942);
+}
+.seccion-rentabilidad-card {
   background-color: #fff;
-  margin: 20px;
-  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1215686275);
+  border-radius: 0.5rem;
+  padding: 1rem 1rem;
+  max-width: 90%;
+  min-height: 32rem;
+}
+.seccion-rentabilidad-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+.seccion-rentabilidad-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .seccion-rentabilidad-flex {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 .form-container {
   max-width: 600px;
   margin: auto;
 }
-h1 {
-  text-align: left;
-}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
-.form-group {
+form .form-group {
   display: flex;
   align-items: center;
 }
-label {
+form label {
   display: inline-block;
   width: 100px;
   font-size: 16px;
   color: #555;
 }
-input[type="text"],
-input[type="email"],
-textarea {
+form input[type=text], form input[type=email], form textarea {
   flex: 1;
   padding: 8px;
   font-size: 16px;
@@ -168,42 +212,55 @@ textarea {
   width: 100%;
   box-sizing: border-box;
 }
-textarea {
+form textarea {
   resize: vertical;
   height: 100px;
 }
-.submit-btn {
+form .submit-btn {
   background-color: #eee;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
   color: #555;
   width: 100%;
+  text-shadow: none;
 }
-.submit-btn:hover {
+form .submit-btn:hover {
   background-color: #ddd;
 }
 
-/* Main */
-main {
-  padding: 1rem;
-}
 .algoritmo-titulo {
-  font-size: 2rem;
   font-size: 1.4rem;
 }
+
 .card-algoritmos {
   background-color: rgb(220, 218, 218);
   max-width: 25rem;
-  border: 1px solid #0000001f;
-  height: 20rem;
-  border-radius: 0.5rem;
+  min-height: 18rem;
 }
 .card-algoritmos-titulo {
-  font-size: 1, 5rem;
+  font-size: 1.5rem;
 }
+.card-algoritmos button {
+  width: 50%;
+  background-color: rgba(155, 123, 123, 0.831);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  text-shadow: 1px 2px 4px #191818;
+  cursor: pointer;
+}
+.card-algoritmos button:hover {
+  filter: brightness(0.95);
+}
+.card-algoritmos button {
+  margin: 0 auto;
+}
+@media (max-width: 899px) {
+  .card-algoritmos button {
+    width: 100%;
+  }
+}
+
 .car-algoritmos-precio {
   color: rgba(155, 123, 123, 0.831);
   font-weight: 600;
@@ -212,69 +269,77 @@ main {
   text-decoration: line-through;
   color: rgba(0, 0, 0, 0.934);
 }
-.card-algoritmos button {
-  width: 50%;
-  background-color: rgba(155, 123, 123, 0.831);
-  border-radius: 0.5rem;
-  margin: 0 auto;
-  color: #ffffff;
-  font-weight: 600;
-  text-shadow: 1px 2px 4px #191818;
-}
+
 .algoritmos-contenedor-flex {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 1rem;
 }
+@media (min-width: 900px) {
+  .algoritmos-contenedor-flex {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
 
+/* Grid Preguntas con áreas nombradas */
 .contenedor-preguntas-grid {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 .contenedor-preguntas-grid section {
-  box-shadow: 0px 0px 8px 0 #0000008a;
-}
-.contenedo-preguntas-grid_uno {
-  grid-area: 1 / 1 / 2 / 2;
   background-color: rgba(216, 201, 201, 0.796);
   border-radius: 0.5rem;
   padding: 1rem;
 }
-.contenedo-preguntas-grid_dos {
-  grid-area: 1 / 2 / 2 / U 4;
-  background-color: rgba(216, 201, 201, 0.796);
-  border-radius: 0.5rem;
-  padding: 1rem;
-}
-.contenedo-preguntas-grid_tres {
-  grid-area: 2 / 1 / 3 / 3;
-  background-color: rgba(216, 201, 201, 0.796);
-  border-radius: 0.5rem;
-  padding: 1rem;
-}
-.contenedo-preguntas-grid_cuatro {
-  grid-area: 2 / 3 / 3 / 4;
-  background-color: rgba(216, 201, 201, 0.796);
-  border-radius: 0.5rem;
+@media (min-width: 900px) {
+  .contenedor-preguntas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: "uno dos dos" "tres tres cuatro";
+    gap: 1rem;
+  }
 }
 
-/*Imagen Bluza*/
+.contenedo-preguntas-grid_uno {
+  grid-area: uno;
+}
+
+.contenedo-preguntas-grid_dos {
+  grid-area: dos;
+}
+
+.contenedo-preguntas-grid_tres {
+  grid-area: tres;
+}
+
+.contenedo-preguntas-grid_cuatro {
+  grid-area: cuatro;
+}
+
+/* Imagen Bluza */
 .imagen-bluza {
   display: block;
   margin: 0 auto;
   max-width: 100%;
   height: auto;
 }
+
+/* Servicios */
 .servicios-contenedor {
   background-color: rgba(158, 150, 150, 0.458);
   max-width: 25rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
 }
 .servicios-contenedor div {
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
+  gap: 0;
 }
 .servicios-contenedor h3 {
   font-size: 1.4rem;
@@ -284,29 +349,46 @@ main {
   font-size: 1rem;
   text-align: center;
 }
+
 .btn-contactar {
   background-color: rgba(245, 242, 242, 0.684);
   padding: 0.5rem 1rem;
   border: none;
   width: 50%;
+  border-radius: 0.5rem;
 }
+@media (max-width: 899px) {
+  .btn-contactar {
+    width: 100%;
+  }
+}
+
 .servicios-contenedor-flex {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 }
-/*Clientes*/
+
+.servicios-header-contenedor-inferior {
+  width: 50%;
+  margin: 0;
+}
+
+/* Clientes */
 .clientes-card {
   background-color: rgb(214, 204, 194);
   max-width: 19rem;
   padding: 0.5rem;
+  border-radius: 0.5rem;
 }
+
 .usuario-logo {
-  width: 5rem;
-  height: 5rem;
+  width: clamp(3rem, 10vw, 5rem);
+  height: clamp(3rem, 10vw, 5rem);
   object-fit: cover;
 }
+
 .cliente-card-flex {
   display: flex;
   font-size: 1rem;
@@ -321,37 +403,40 @@ main {
   margin-top: 0.2rem;
   font-weight: 400;
 }
+
 .clientes-contenedor-flex {
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
+
 .clientes-contenedor {
   margin-top: 100px;
 }
 
-/*Empresas Compatibles*/
+/* Empresas */
 .empresasLogo {
-  width: 10rem;
-  height: 4rem;
+  width: clamp(7rem, 30vw, 10rem);
+  height: clamp(2.5rem, 6vw, 4rem);
   object-fit: cover;
-  background: rgb(255, 255, 255);
+  background: #fff;
   border-radius: 10px;
 }
+
 .empresas-titulo {
   font-size: 1.2rem;
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-weight: 600;
   text-shadow: 1px 2px 4px #191818;
 }
+
 .empresas-container {
   background-color: rgba(155, 123, 123, 0.831);
   padding: 1rem;
   margin: 1rem 0 0;
 }
 
-/* Consulta form */
 .form-consulta {
   background-color: rgb(236, 232, 228);
   padding: 1rem;
@@ -364,13 +449,14 @@ main {
 .form-consulta div input {
   padding: 0.5rem;
 }
+
 .consulta-container {
   padding: 1rem;
 }
-/* Mail Contacto */
+
 .mail-contacto-container {
   background-image: url(../imagenes/fondoMail.jpg);
-  height: 10rem;
+  min-height: 10rem;
   background-size: cover;
 }
 .mail-contacto-container h4 {
@@ -381,46 +467,39 @@ main {
   width: 70%;
   border: none;
 }
-/* Footer */
+
 footer {
   background-color: rgb(220, 218, 218);
-  height: 10rem;
-
+  min-height: 10rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-/* footer contacto */
-/* Discreto como pediste */
+
 .icono-footer {
   font-size: 15px;
   line-height: 1;
 }
-
-/* Alto mínimo similar al de tu captura */
-.footer {
-  min-height: 228px;
+.icono-footer i {
+  color: rgba(155, 123, 123, 0.831);
+  object-fit: cover;
 }
 
+.footer {
+  min-height: clamp(12rem, 15vw, 14.25rem);
+}
 .footer .footer-icons {
   position: absolute;
   left: 0;
   top: 2.9rem;
   padding-left: 0.75rem;
 }
-
 .footer .footer-content {
   padding-left: 90px;
 }
-
 .footer .icono-footer:hover {
   opacity: 0.8;
   text-decoration: none;
-}
-
-.icono-footer i {
-  color: rgba(155, 123, 123, 0.831);
-  object-fit: cover;
 }
 
 .footer-contenedor-flex {
@@ -429,20 +508,38 @@ footer {
   color: rgba(155, 123, 123, 0.831);
 }
 
-@media only screen and (min-width: 900px) {
-  .algoritmos-contenedor-flex,
-  .seccion-rentabilidad-flex {
-    flex-direction: row;
-    justify-content: center;
-  }
-  .contenedor-preguntas-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 1rem;
-  }
+.u-h1-xxl {
+  font-size: 6rem;
 }
-.servicios-header-contenedor-inferior {
-  width: 50%;
-  margin: 0;
+
+.u-h1-xl {
+  font-size: 3rem;
 }
+
+.u-h1-lg {
+  font-size: 2.25rem;
+}
+
+.u-h2 {
+  font-size: 1.75rem;
+}
+
+.u-h3 {
+  font-size: 1.5rem;
+}
+
+.u-base {
+  font-size: 1rem;
+}
+
+.u-sm {
+  font-size: 0.875rem;
+}
+
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+}
+
+/*# sourceMappingURL=styles.css.map */

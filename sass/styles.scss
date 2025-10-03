@@ -1,0 +1,353 @@
+// ===== VARIABLES =====
+$font-main: "Poppins", sans-serif;
+
+$brand: rgba(155, 123, 123, 0.831);
+$brand-ink: #191818;
+$text: #333;
+$text-muted: #555;
+$white: #fff;
+$black: #000;
+
+$bg-page: #fff;
+$bg-light: #f8f9fa;
+$bg-soft: rgb(220, 218, 218);
+$bg-soft-2: rgb(214, 204, 194);
+$bg-soft-3: rgba(158, 150, 150, 0.458);
+$bg-soft-4: rgba(216, 201, 201, 0.796);
+$bg-beige: rgba(245, 245, 220, 0.942);
+
+$radius: 0.5rem;
+$shadow: 0 0 8px 0 #0000008a;
+
+$space-1: 0.5rem;
+$space-2: 1rem;
+$space-3: 2rem;
+
+$bp-md: 900px;
+$z-fixed: 1000;
+
+$font-sizes: (
+  "h1-xxl": 6rem,
+  "h1-xl": 3rem,
+  "h1-lg": 2.25rem,
+  "h2": 1.75rem,
+  "h3": 1.5rem,
+  "base": 1rem,
+  "sm": 0.875rem
+);
+
+// ===== MIXINS & PLACEHOLDERS =====
+@mixin flex-center($dir: row, $gap: 0) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+@mixin btn($bg: $brand, $color: $white) {
+  background-color: $bg;
+  color: $color;
+  border: none;
+  border-radius: $radius;
+  padding: $space-1 $space-2;
+  font-weight: 600;
+  text-shadow: 1px 2px 4px $brand-ink;
+  cursor: pointer;
+
+  &:hover { filter: brightness(0.95); }
+}
+
+@mixin card($bg: $white, $p-y: $space-2, $p-x: $space-2) {
+  background-color: $bg;
+  border: 1px solid #0000001f;
+  border-radius: $radius;
+  padding: $p-y $p-x;
+}
+
+// Fondo cover con altura fluida
+@mixin bg-cover($img, $min: 28rem, $pref: 90vh, $max: 100vh) {
+  background-image: url(#{$img});
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: clamp($min, $pref, $max);
+  position: relative;
+}
+
+// Full-bleed
+@mixin full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+}
+
+// Breakpoints
+@mixin respond-md { @media (min-width: $bp-md) { @content; } }
+@mixin respond-down-md { @media (max-width: ($bp-md - 1)) { @content; } }
+
+// Placeholders
+%shadowed { box-shadow: $shadow; }
+%card     { @include card(); }
+%btn      { @include btn(); }
+
+// ===== BASE =====
+* { font-family: $font-main; }
+html, body { margin: 0 !important; padding: 0 !important; }
+
+body {
+  background-color: $bg-page;
+  margin: 20px;
+  color: $text;
+}
+
+ul { list-style: none; padding-left: 0; }
+h1 { text-align: left; }
+
+.section img {
+  width: 60%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+@media (max-width: ($bp-md - 1)) { .section img { width: 100%; } }
+
+.tamaño-text-h1 { font-size: 6rem; }
+main { padding: $space-2; }
+
+// ===== HEADER =====
+.index-header, .preguntas-header { @include bg-cover("../imagenes/fondoInicio.png", 28rem, 95vh, 100vh); }
+.nosotros-header                 { @include bg-cover("../imagenes/fondoNosotros.png", 24rem, 85vh, 95vh); }
+.contacto-header                 { @include bg-cover("../imagenes/fondoContacto.png", 24rem, 85vh, 95vh); }
+
+.header-contenedor-superior, .preguntas-contenedor-superior {
+  background-color: rgba(255, 255, 255, 0.938);
+  @include flex-center(row, 0);
+  justify-content: space-between;
+  padding: $space-1;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: $z-fixed;
+}
+
+.logotipo { width: 6.5rem; }
+
+.index-h1 { font-size: 1.5rem; text-transform: capitalize; }
+
+.header-contenedor-inferior {
+  width: 60%;
+  margin: 0 auto;
+
+  button { @include btn($brand, lch(100% 0.01 296.81)); }
+}
+
+.servicios-header, .servicios-header .navbar {
+  background-color: $bg-light;
+  width: 100%;
+  margin: 0 !important;
+}
+.servicios-header .container-fluid {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Header fijo -> espacio al main */
+main { margin-top: 40px; }
+
+// ===== RENTABILIDAD =====
+.seccion-rentabilidad {
+  background-color: rgb(248, 246, 246);
+  min-height: clamp(48rem, 70rem, 81rem);
+
+  &-titulo {
+    padding: $space-3;
+    background-color: $bg-beige;
+  }
+
+  &-card {
+    @include card($white, $space-2, $space-2);
+    max-width: 90%;
+    min-height: clamp(24rem, 32rem, 37rem);
+
+    h4 { font-size: 1.2rem; margin-bottom: 0; }
+  }
+
+  &-flex { @include flex-center(column, 2rem); }
+}
+
+@include respond-md {
+  .seccion-rentabilidad-flex { flex-direction: row; justify-content: center; }
+}
+
+// ===== FORMS =====
+.form-container { max-width: 600px; margin: auto; }
+
+form {
+  display: flex; flex-direction: column; gap: 15px;
+
+  .form-group { display: flex; align-items: center; }
+  label { display: inline-block; width: 100px; font-size: 16px; color: $text-muted; }
+
+  input[type="text"], input[type="email"], textarea {
+    flex: 1; padding: 8px; font-size: 16px;
+    border: 1px solid #ccc; border-radius: 8px; width: 100%; box-sizing: border-box;
+  }
+
+  textarea { resize: vertical; height: 100px; }
+
+  .submit-btn {
+    @extend %btn;
+    background-color: #eee;
+    color: $text-muted;
+    width: 100%;
+    text-shadow: none;
+
+    &:hover { background-color: #ddd; }
+  }
+}
+
+// ===== MAIN SECTIONS =====
+.algoritmo-titulo { font-size: 1.4rem; }
+
+.card-algoritmos {
+  @extend %card;
+  background-color: $bg-soft;
+  max-width: 25rem;
+  min-height: clamp(14rem, 18rem, 20rem);
+
+  &-titulo { font-size: 1.5rem; }
+
+  button {
+    width: 50%;
+    @include btn($brand, $white);
+    margin: 0 auto;
+  }
+
+  @include respond-down-md { button { width: 100%; } }
+}
+
+.car-algoritmos-precio {
+  color: $brand; font-weight: 600;
+  span { text-decoration: line-through; color: rgba(0,0,0,0.934); }
+}
+
+.algoritmos-contenedor-flex {
+  @include flex-center(column, 1rem);
+  @include respond-md { flex-direction: row; justify-content: center; }
+}
+
+/* Grid Preguntas con áreas nombradas */
+.contenedor-preguntas-grid {
+  display: flex; flex-direction: column; gap: 1rem;
+
+  section { @extend %shadowed; background-color: $bg-soft-4; border-radius: $radius; padding: $space-2; }
+
+  @include respond-md {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+      "uno dos dos"
+      "tres tres cuatro";
+    gap: 1rem;
+  }
+}
+.contenedo-preguntas-grid_uno    { grid-area: uno; }
+.contenedo-preguntas-grid_dos    { grid-area: dos; }
+.contenedo-preguntas-grid_tres   { grid-area: tres; }
+.contenedo-preguntas-grid_cuatro { grid-area: cuatro; }
+
+/* Imagen Bluza */
+.imagen-bluza { display: block; margin: 0 auto; max-width: 100%; height: auto; }
+
+/* Servicios */
+.servicios-contenedor {
+  @extend %card;
+  background-color: $bg-soft-3;
+  max-width: 25rem;
+
+  div { @include flex-center(row); }
+  h3 { font-size: 1.4rem; text-align: center; }
+  p  { font-size: 1rem;  text-align: center; }
+}
+.btn-contactar {
+  background-color: rgba(245, 242, 242, 0.684);
+  padding: $space-1 $space-2;
+  border: none;
+  width: 50%;
+  border-radius: $radius;
+
+  @include respond-down-md { width: 100%; }
+}
+.servicios-contenedor-flex { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
+.servicios-header-contenedor-inferior { width: 50%; margin: 0; }
+
+/* Clientes */
+.clientes-card { background-color: $bg-soft-2; max-width: 19rem; padding: $space-1; border-radius: $radius; }
+.usuario-logo {
+  width: clamp(3rem, 10vw, 5rem);
+  height: clamp(3rem, 10vw, 5rem);
+  object-fit: cover;
+}
+.cliente-card-flex {
+  display: flex; font-size: 1rem; gap: 10px;
+  h3 { margin-bottom: 0; font-size: 1.2rem; font-weight: 800; }
+  h4 { margin-top: 0.2rem; font-weight: 400; }
+}
+.clientes-contenedor-flex { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.clientes-contenedor { margin-top: 100px; }
+
+/* Empresas */
+.empresasLogo {
+  width: clamp(7rem, 30vw, 10rem);
+  height: clamp(2.5rem, 6vw, 4rem);
+  object-fit: cover;
+  background: $white;
+  border-radius: 10px;
+}
+.empresas-titulo { font-size: 1.2rem; color: $white; font-weight: 600; text-shadow: 1px 2px 4px $brand-ink; }
+.empresas-container { background-color: $brand; padding: $space-2; margin: $space-2 0 0; }
+
+// ===== MAIL / CONSULTA =====
+.form-consulta {
+  background-color: rgb(236, 232, 228);
+  padding: $space-2;
+
+  div {
+    display: flex; flex-direction: column; margin: 0.5rem 0;
+    input { padding: $space-1; }
+  }
+}
+.consulta-container { padding: $space-2; }
+
+.mail-contacto-container {
+  background-image: url(../imagenes/fondoMail.jpg);
+  min-height: clamp(8rem, 10rem, 10rem);
+  background-size: cover;
+
+  h4 { font-size: 1.2rem; padding-top: $space-1; }
+  input { width: 70%; border: none; }
+}
+
+// ===== FOOTER =====
+footer {
+  background-color: $bg-soft;
+  min-height: clamp(8rem, 10rem, 12rem);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.icono-footer {
+  font-size: 15px; line-height: 1;
+  i { color: $brand; object-fit: cover; }
+}
+.footer {
+  min-height: clamp(12rem, 15vw, 14.25rem);
+  .footer-icons { position: absolute; left: 0; top: 2.9rem; padding-left: 0.75rem; }
+  .footer-content { padding-left: 90px; }
+  .icono-footer:hover { opacity: .8; text-decoration: none; }
+}
+.footer-contenedor-flex { display: flex; justify-content: center; color: $brand; }
+
+// ===== UTILIDADES =====
+@each $name, $size in $font-sizes {
+  .u-#{$name} { font-size: $size; }
+}
+.full-bleed { @include full-bleed; }
